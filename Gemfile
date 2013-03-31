@@ -4,13 +4,11 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'jquery-rails'
 
-
-
-
-
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'rb-inotify', '~> 0.8.8'
 end
 
 group :assets do
