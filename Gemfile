@@ -8,6 +8,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'factory_girl_rails'
   gem 'guard-rspec'
+  gem 'shoulda-matchers'
   gem 'rb-inotify', '~> 0.8.8'
 end
 
