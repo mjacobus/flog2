@@ -5,6 +5,10 @@ describe Album, '#body' do
   it { should_not validate_presence_of(:body) }
 end
 
+describe Album, '#category' do
+  it { should belong_to(:category) }
+end
+
 describe Album, '#slug' do
   it { should allow_mass_assignment_of(:slug) }
   it { should validate_presence_of(:slug) }
