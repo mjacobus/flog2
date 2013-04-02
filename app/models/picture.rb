@@ -18,12 +18,14 @@ class Picture < ActiveRecord::Base
         :big        => "536x536>",
         :medium     => "268x268>",
         :small      => "134x134>",
+        :thumb      => "100x100#",
       },
       :convert_options => {
         :original   => "-strip",
         :big        => "-quality 75 -strip ",
         :medium     => "-quality 75 -strip",
         :small      => "-quality 75 -strip",
+        :thumb      => "-quality 75 -strip",
       }
 
   validates_attachment :file, :presence => true,
