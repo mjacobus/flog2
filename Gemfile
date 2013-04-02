@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
+gem "paperclip", "~> 3.0"
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"

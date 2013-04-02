@@ -19,3 +19,7 @@ describe Album, '#title' do
   it { should allow_mass_assignment_of(:title) }
   it { should validate_presence_of(:title) }
 end
+
+describe Album, '#pictures' do
+  it { should have_many(:pictures) }
+end
