@@ -15,6 +15,12 @@ describe Picture, "#file" do
   it { should validate_attachment_size(:file).less_than(10.megabytes) }
 end
 
+describe Picture, "#sequence" do
+  it { should allow_mass_assignment_of(:sequence) }
+  it { should_not validate_presence_of(:sequence) }
+  it { should validate_numericality_of(:sequence).only_integer }
+end
+
 describe Picture, "#title" do
   it { should allow_mass_assignment_of(:title) }
   it { should validate_presence_of(:title) }
