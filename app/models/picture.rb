@@ -32,6 +32,5 @@ class Picture < ActiveRecord::Base
     content_type: { content_type: ['image/jpeg', 'image/png'] },
     size: { less_than: 10.megabytes }
 
-  validates :title, presence: true
   validates :sequence, numericality: { only_integer: true }
 end

@@ -1,6 +1,8 @@
 ActiveAdmin.register Picture do
   belongs_to :album
 
+  controller.respond_to :js, :html
+
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :title

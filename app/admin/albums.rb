@@ -14,5 +14,17 @@ ActiveAdmin.register Album do
     column :updated_at
     
     default_actions
-  end  
+  end 
+
+  
+  show do
+    h3 album.title
+    simple_format album.body
+    div do
+      simple_format album.body
+    end
+
+    render 'pictures'
+  end
+  
 end

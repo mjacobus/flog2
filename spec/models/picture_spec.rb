@@ -23,5 +23,5 @@ end
 
 describe Picture, "#title" do
   it { should allow_mass_assignment_of(:title) }
-  it { should validate_presence_of(:title) }
+  it { should_not validate_presence_of(:title) }
 end
