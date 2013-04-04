@@ -7,6 +7,7 @@ end
 
 describe Album, '#category' do
   it { should belong_to(:category) }
+  it { should allow_mass_assignment_of(:category_id) }
 end
 
 describe Album, '#slug' do

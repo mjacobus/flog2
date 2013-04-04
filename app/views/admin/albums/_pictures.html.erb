@@ -1,0 +1,11 @@
+<div id="uploader-button">
+  <input id="fileupload" type="file" name="picture[file]" multiple data-url="<%= admin_album_pictures_path(@album) %>.js"
+    data-sequential-uploads="true"
+    data-form-data='{"script": "true"}'>
+</div>
+
+<ul id="pictures">
+  <% @album.pictures.each do |picture| %>
+    <%= render partial: 'picture', locals: { picture: picture } %>
+  <% end %>
+</ul>

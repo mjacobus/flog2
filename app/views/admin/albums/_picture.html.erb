@@ -1,0 +1,17 @@
+<li class="picture_container medium" id="picture_<%= picture.id %>">
+  <div class="picture">
+    <%= image_tag picture.file.url(:medium) %>   
+  </div> 
+
+  <div class="actions">
+    <%= link_to t('.view'), [:admin, @album, picture] %>
+
+    <%= link_to t('.edit'), [:edit, :admin, @album, picture] %>
+
+    <%= link_to t('.destroy'), [:admin, @album, picture], 
+      method: :delete, 
+      remote: true, 
+      confirm: t('.confirm_destroy', default: 'Are you sure?')
+    %>
+  </div> 
+</li>

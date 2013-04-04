@@ -7,30 +7,30 @@
 #
 #
 class Picture < ActiveRecord::Base
-  attr_accessible :description, :file, :picturable_id, :title
+  attr_accessible :description, :file, :picturable_id, :sequence, :title
   belongs_to :picturable, polymorphic: true
 
     has_attached_file :file,
-      :path => ":rails_root/public/system/:class/:attachment/:id_partition/:style.:extension",
-      :url => "/system/:class/:attachment/:id_partition/:style.:extension",
-      :styles => {
-        :original   => "1072x1072>",
-        :big        => "536x536>",
-        :medium     => "268x268>",
-        :small      => "134x134>",
-        :thumb      => "100x100#",
+      path: ":rails_root/public/system/:class/:attachment/:id_partition/:style.:extension",
+      url:  "/system/:class/:attachment/:id_partition/:style.:extension",
+      styles: {
+        original: "1072x1072>",
+        big:      "536x536>",
+        medium:   "268x268>",
+        small:    "134x134>",
+        thumb:    "100x100#",
       },
-      :convert_options => {
-        :original   => "-strip",
-        :big        => "-quality 75 -strip ",
-        :medium     => "-quality 75 -strip",
-        :small      => "-quality 75 -strip",
-        :thumb      => "-quality 75 -strip",
+      convert_options: {
+        original:  "-strip",
+        big:       "-quality 75 -strip ",
+        medium:    "-quality 75 -strip",
+        small:     "-quality 75 -strip",
+        thumb:     "-quality 75 -strip",
       }
 
-  validates_attachment :file, :presence => true,
-    :content_type => { :content_type => ['image/jpeg', 'image/png'] },
-    :size => { :less_than => 10.megabytes }
+  validates_attachment :file, presence: true,
+    content_type: { content_type: ['image/jpeg', 'image/png'] },
+    size: { less_than: 10.megabytes }
 
-  validates :title, presence: true
+  validates :sequence, numericality: { only_integer: true }
 end

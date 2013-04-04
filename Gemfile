@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
 gem "paperclip", "~> 3.0"
 
+
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'factory_girl_rails'
@@ -21,5 +22,6 @@ group :assets do
   gem "less-rails"
   gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
+  gem "jquery-fileupload-rails"
 end
 
