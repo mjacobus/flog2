@@ -1,5 +1,8 @@
 class Album < ActiveRecord::Base
-  attr_accessible :body, :slug, :title
+  attr_accessible :body,
+                  :category_id,
+                  :slug,
+                  :title
   belongs_to :category
   has_many :pictures, as: :picturable, order: :sequence
 
