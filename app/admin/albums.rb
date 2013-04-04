@@ -1,4 +1,5 @@
 ActiveAdmin.register Album do
+
   index do
     column :picture do |album|
       picture = album.pictures.first
@@ -15,16 +16,18 @@ ActiveAdmin.register Album do
     
     default_actions
   end 
-
   
   show do
-    h3 album.title
-    simple_format album.body
-    div do
-      simple_format album.body
+    attributes_table do
+      row :title
+      row :slug
+      row :body do
+        simple_format album.body
+      end
+      row :pictures do
+        render 'pictures'
+      end
     end
-
-    render 'pictures'
   end
   
 end
