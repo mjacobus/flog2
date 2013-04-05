@@ -4,7 +4,7 @@
     data-form-data='{"script": "true"}'>
 </div>
 
-<ul id="pictures">
+<ul id="pictures" data-album-id="<%= @album.id %>">
   <% @album.pictures.each do |picture| %>
     <%= render partial: 'picture', locals: { picture: picture } %>
   <% end %>

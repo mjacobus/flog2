@@ -29,5 +29,15 @@ ActiveAdmin.register Album do
       end
     end
   end
+
+  member_action :reorder_pictures, method: :post do
+    album = Album.find(params[:id])
+    params[:picture_ids].each_with_index do |id, index|
+      picture = album.pictures.find(id)
+      picture.sequence = index
+      picture.save
+    end
+    render text: :ok
+  end
   
 end
