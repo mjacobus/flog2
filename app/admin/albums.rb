@@ -10,6 +10,7 @@ ActiveAdmin.register Album do
       end
     end
     column :title
+    column :category
     column :slug
     column :created_at
     column :updated_at

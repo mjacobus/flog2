@@ -8,4 +8,41 @@ class Album < ActiveRecord::Base
 
   validates :slug, presence: true, uniqueness: { case_sensitive: false }
   validates :title, presence: true
+
+
+  def self.published
+    order('created_at DESC')
+  end
+
+  def self.filter(params = {})
+    q = self
+
+    params.each do |key, value|
+      if key.present? && respond_to?("with_#{key}")
+        q = self.send("with_#{key}", value)
+      end
+    end
+
+    q
+  end
+
+  def self.with_category(slug)
+    joins(:category).where('categories.slug = ?', slug)
+  end
+
+  def self.with_album(slug)
+    with_slug(slug)
+  end
+
+  def self.with_slug(slug)
+    where(slug: slug)
+  end
+
+  def self.find_one_by(params = {})
+    record = filter(params).limit(1).first
+    unless record
+      raise ActiveRecord::RecordNotFound.new('No record matches the given criteria')
+    end
+    record
+  end
 end

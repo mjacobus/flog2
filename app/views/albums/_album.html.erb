@@ -1,0 +1,20 @@
+<% url = album_path(album) %>
+
+<article>
+  <div class="row">
+    <div class="span12">
+      <%= link_to(url) do %>
+        <h2><%= album.title %></h2>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12">
+      <%= link_to(url) do %>
+        <%= picture(album.pictures.first) %>
+      <% end %>
+    </div>
+  </div>
+</article>
+
