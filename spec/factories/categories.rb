@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :category do
-    name "MyString"
-    slug "MyString"
+    name { generate(:name) }
+    slug { generate(:slug) }
     description "MyText"
   end
 end

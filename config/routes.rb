@@ -4,6 +4,8 @@ Flog::Application.routes.draw do
 
   root to: 'albums#index'
 
-  get ':page' => 'albums#index', as: :albums
+  get ':page' => 'albums#index', as: :albums, constraints: { page: /\d+/ }
+  get ':category(/:page)' => 'categories#index', as: :category, constraints: { page: /\d+/ }
   get ':category/:album' => 'albums#show', as: :album
+
 end

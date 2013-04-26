@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="span12"><h1><%= @category.name %></h1></div>
+</div>
+
+<% if @category.description? %>
+  <div class="row">
+    <div class="span12"><%= simple_format @category.description  %></div>
+  </div>
+<% end %>
+
+<%= render @albums %>
+
+<%= paginate(@albums) %>

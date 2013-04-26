@@ -8,6 +8,7 @@ class Album < ActiveRecord::Base
 
   validates :slug, presence: true, uniqueness: { case_sensitive: false }
   validates :title, presence: true
+  validates :category, presence: true
 
 
   def self.published

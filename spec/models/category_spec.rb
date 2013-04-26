@@ -16,3 +16,16 @@ describe Category, "#slug" do
   it { should validate_presence_of(:slug) }
   it { should validate_uniqueness_of(:slug).case_insensitive }
 end
+
+describe Category, "#destroy" do
+  let(:album) { FactoryGirl.create(:album) }
+
+  it "fails when has albums" do
+    album.category.destroy.should be_false
+  end
+
+  it "succeeds when has no album" do
+     FactoryGirl.create(:category).destroy.should be_true
+  end
+
+end
