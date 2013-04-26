@@ -5,6 +5,7 @@ gem 'mysql2'
 gem 'jquery-rails'
 gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
 gem "paperclip", "~> 3.0"
+gem 'capistrano'
 
 
 group :test, :development do
