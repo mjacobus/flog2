@@ -1,19 +1,19 @@
 <article>
-  <div class="row">
+  <div class="row-fluid">
     <div class="span12">
       <h1><%= @album.title %></h1>
     </div>
   </div>
   
   
-  <div class="row">
+  <div class="row-fluid">
     <div class="span12">
       <%= simple_format(@album.body) if @album.body? %>
     </div>
   </div>
 
   <% @album.pictures.each do |picture| %>
-    <div class="row">
+    <div class="row-fluid">
       <div class="span12">
         <%= picture(picture) %>
       </div>
