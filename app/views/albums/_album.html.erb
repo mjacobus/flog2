@@ -4,17 +4,11 @@
   <div class="row-fluid">
     <div class="span12">
       <%= link_to(url) do %>
-        <h2><%= album.title %></h2>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="row-fluid">
-    <div class="span12">
-      <%= link_to(url) do %>
-        <%= picture(album.pictures.first) %>
+        <%= picture(album.pictures.first, :original, {
+          alt: album.title,
+          title: album.title
+        }) %>
       <% end %>
     </div>
   </div>
 </article>
-
