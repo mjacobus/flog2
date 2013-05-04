@@ -6,7 +6,7 @@ gem 'jquery-rails'
 gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
 gem "paperclip", "~> 3.0"
 gem 'capistrano'
-
+gem "high_voltage"
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"

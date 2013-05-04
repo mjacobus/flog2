@@ -1,0 +1,8 @@
+
+<div id="banners">
+  <% home_albums.each_with_index do |album, index| %>
+    <div class="banner" style="<%= 'display: none' if index > 0 %>">
+      <%= render partial: 'albums/album', locals: { album: album } %>
+    </div>
+  <% end %>
+</div>

@@ -1,8 +1,0 @@
-
-<div id="banners">
-  <% @albums.each_with_index do |album, index| %>
-    <div class="banner" style="<%= 'display: none' if index > 0 %>">
-      <%= render album %>
-    </div>
-  <% end %>
-</div>
