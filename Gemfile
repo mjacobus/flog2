@@ -7,6 +7,7 @@ gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
 gem "paperclip", "~> 3.0"
 gem 'capistrano'
 gem "high_voltage"
+gem "twitter-bootstrap-rails"
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
@@ -21,7 +22,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem "therubyracer"
   gem "less-rails"
-  gem "twitter-bootstrap-rails"
   gem 'uglifier', '>= 1.0.3'
   gem "jquery-fileupload-rails"
 end
