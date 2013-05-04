@@ -1,8 +1,10 @@
 
 <div id="banners">
-  <% home_albums.each_with_index do |album, index| %>
+  <% home_pictures.each_with_index do |picture, index| %>
     <div class="banner" style="<%= 'display: none' if index > 0 %>">
-      <%= render partial: 'albums/album', locals: { album: album } %>
+      <%= link_to picture.picturable do %>
+        <%= picture(picture, :original, alt: picture.picturable.title) %>
+      <% end %>
     </div>
   <% end %>
 </div>

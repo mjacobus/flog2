@@ -8,7 +8,7 @@ IMAGE_PATH = Rails.root. + 'db/seeds'
 
 def add_pictures(picturable)
   (1..17).to_a.slice(rand(15),rand(15)).each do |num|
-    picturable.pictures.create!(file: File.open("#{IMAGE_PATH}/pictures/#{"%02d" % num}.jpg"))
+    picturable.pictures.create!(file: File.open("#{IMAGE_PATH}/pictures/#{"%02d" % num}.jpg"), home: (rand(15) == 1)
   end
 end
 

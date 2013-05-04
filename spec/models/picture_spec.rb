@@ -15,6 +15,10 @@ describe Picture, "#file" do
   it { should validate_attachment_size(:file).less_than(10.megabytes) }
 end
 
+describe Picture, "#home" do
+  it { should allow_mass_assignment_of(:home) }
+end
+
 describe Picture, "#sequence" do
   it { should allow_mass_assignment_of(:sequence) }
   it { should_not validate_presence_of(:sequence) }
@@ -24,4 +28,11 @@ end
 describe Picture, "#title" do
   it { should allow_mass_assignment_of(:title) }
   it { should_not validate_presence_of(:title) }
+end
+
+describe Picture, ".home" do
+  it "gets home flagged pictures" do
+    Picture.should_receive(:where).with(home: true)
+    Picture.home
+  end
 end

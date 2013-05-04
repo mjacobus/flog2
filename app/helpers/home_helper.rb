@@ -1,5 +1,5 @@
 module HomeHelper
-  def home_albums
-    Album.limit(5).order('RAND()')
+  def home_pictures
+    Picture.home.order('RAND()')
   end
 end

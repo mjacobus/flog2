@@ -6,6 +6,7 @@ ActiveAdmin.register Picture do
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs do
       f.input :title
+      f.input :home
       f.input :sequence
       f.input :description
       f.input :file, :as => :file,
@@ -22,6 +23,7 @@ ActiveAdmin.register Picture do
       row :file do 
         img :src => picture.file.url(:big)
       end
+      row :home
       
       row :description
       row :sequence

@@ -4,7 +4,7 @@ ActiveAdmin.register Album do
     column :picture do |album|
       picture = album.pictures.first
       if picture
-        link_to admin_album_picture_url(album, picture) do
+        link_to admin_album_url(album) do
           image_tag album.pictures.first.file.url(:thumb)
         end
       end

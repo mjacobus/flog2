@@ -7,7 +7,7 @@
 #
 #
 class Picture < ActiveRecord::Base
-  attr_accessible :description, :file, :picturable_id, :sequence, :title
+  attr_accessible :description, :file, :home, :picturable_id, :sequence, :title
   belongs_to :picturable, polymorphic: true
 
     has_attached_file :file,
@@ -33,4 +33,8 @@ class Picture < ActiveRecord::Base
     size: { less_than: 10.megabytes }
 
   validates :sequence, numericality: { only_integer: true }
+
+  def self.home
+    where(home: true)
+  end
 end
