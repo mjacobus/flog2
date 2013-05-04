@@ -3,7 +3,7 @@ Flog::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'pages#show', id: 'home'
-
+  get 'contato' => 'pages#show', id: 'contact'
 
   get ':page' => 'albums#index', as: :albums, constraints: { page: /\d+/ }
   get ':category(/:page)' => 'categories#index', as: :category, constraints: { page: /\d+/ }
