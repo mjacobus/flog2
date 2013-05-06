@@ -1,10 +1,22 @@
 
-<div id="banners">
-  <% home_pictures.each_with_index do |picture, index| %>
-    <div class="banner" style="<%= 'display: none' if index > 0 %>">
-      <%= link_to picture.picturable do %>
-        <%= picture(picture, :original, alt: picture.picturable.title) %>
+<div class="row-fluid">
+  <div class="span12">
+    <div id="banners">
+      <% home_pictures.each_with_index do |picture, index| %>
+        <div class="banner" style="<%= 'display: none' if index > 0 %>">
+          <%= link_to picture.picturable do %>
+            <%= picture(picture, :original, alt: picture.picturable.title) %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
+  </div>
+</div>
+
+
+<div class="row-fluid">
+  <div class="span8"></div>
+  <div class="span4">
+    <%= facebook_like_buttom %>
+  </div>
 </div>
