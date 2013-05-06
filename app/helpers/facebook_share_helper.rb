@@ -5,7 +5,7 @@ module FacebookShareHelper
   def facebook_like_meta
     if show_facebook_like?
       html = facebook_like_properties.map do |name, value|
-        "<meta property=\"og:#{name}\" content=\"#{value}\"/>"
+        "<meta property=\"og:#{name}\" content=\"#{value}\" />"
       end.join("\n").html_safe
     end
   end
