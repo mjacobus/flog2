@@ -20,7 +20,7 @@ module FacebookShareHelper
       image: request.base_url + asset_path('logo-original.png'),
       site_name: 'Pamela Jacobus Fotografia',
       title: 'Pamela Jacobus Fotografia',
-      type: :article,
+      type: :website,
       url: 'http://www.pamelajacobus.com.br',
     }
   end

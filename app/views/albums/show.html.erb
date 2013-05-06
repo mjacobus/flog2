@@ -8,7 +8,8 @@
     <div class="span4">
       <%= facebook_like_buttom(
         image: request.base_url + @album.pictures.first.file.url(:medium),
-        title: @album.title 
+        title: @album.title,
+        type: :article
       )%>
     </div>
   </div>
