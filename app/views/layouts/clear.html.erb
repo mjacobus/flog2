@@ -16,32 +16,23 @@
     <%= google_analytics %>
     <%= facebook_like_meta %>
   </head>
-  <body id="flog">
+  <body id="clear">
     <%= facebook_like_header %>
     <div class="container-fluid">
-      <div class="row-fluid">
-        <aside class="span3">
-          <div class="">
-            <a href="/">
-              <%= image_tag('logo-original.png', alt: 'Pamela Jacobus Fotografia', title: 'Pamela Jacobus Fotografia', id: 'logo') %>
-            </a>
-
-            <ul class="nav nav-list">
-              <li class="nav-header"><%= t('flog.categories') %></li>
-              <% categories.each do |category| %>
-                <li><%= link_to category.name, category_path(category) %></li>
-              <% end %>
-              <li class="nav-header"><%= t('flog.about') %></li>
-              <li><a target="_blank" href="http://www.facebook.com/PamelaJacobusFotografia" class="sprite facebook_page">Minha Página no Facebook</a></li>
-              <li><a href="/contato">Contato</a></li> 
-            </ul>
-          </div><!--/.well -->
-        </aside><!--/aside-->
-        <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>
+
+      <div class="row">
+        <div class="span12">
+            <ul class="horizontal-nav">
+              <% categories.each_with_index do |category, index| %>
+                <li class="item-<%= index %>"><%= link_to category.name, category_path(category) %></li>
+              <% end %>
+              <li><a target="_blank" href="http://www.facebook.com/PamelaJacobusFotografia" class="sprite facebook_page">Facebook</a></li>
+              <li><a href="/contato">Contato</a></li> 
+            </ul>
         </div>
-      </div><!--/row-->
+      </div>
     </div> <!-- /container -->
 
     <!-- Javascripts
