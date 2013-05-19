@@ -11,7 +11,7 @@ class ContactController < FrontendController
     @contact.deliver
 
     unless request.xhr?
-      flash[:notice] = t('helper.messages.contact_delivered')
+      flash[:notice] = t('helpers.messages.contact_delivered')
     end
 
     respond_with(@contact)

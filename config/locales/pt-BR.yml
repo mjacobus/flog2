@@ -131,6 +131,8 @@ pt-BR:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+    messages:
+      contact_delivered: Mensagem enviada com sucesso.
   number:
     currency:
       format:
