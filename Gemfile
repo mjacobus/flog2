@@ -8,6 +8,8 @@ gem "paperclip", "~> 3.0"
 gem 'capistrano'
 gem "high_voltage"
 gem "twitter-bootstrap-rails"
+gem "mail_form"
+gem "simple_form"
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"

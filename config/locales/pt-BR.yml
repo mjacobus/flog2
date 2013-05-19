@@ -216,3 +216,14 @@ pt-BR:
   flog:
     categories: Categorias
     about: Quem sou eu
+    
+  mail_form:
+    models:
+      contact: Contato
+    attributes:
+      contact:
+        email: "E-mail"
+        message: "Mensagem"
+        name: Nome
+        phone: "Telefone"
+        subject: Assunto

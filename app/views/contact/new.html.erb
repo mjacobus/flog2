@@ -1,0 +1,13 @@
+<div class="hero-unit">
+  <h1>Contato</h1>
+</div>
+
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :phone %>
+  <%= f.input :subject %>
+  <%= f.input :message, as: :text, input_html: { rows: 5 } %>
+
+  <%= f.submit 'Enviar', class: 'btn' %>
+<% end %>
