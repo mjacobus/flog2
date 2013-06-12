@@ -3,7 +3,7 @@ class FrontendController < ApplicationController
   respond_to :js, :html
 
   def per_page
-    params[:per_page] || 10
+    params[:per_page] || 4 
   end
 
   def page
