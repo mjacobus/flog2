@@ -8,9 +8,13 @@
   <div class="row-fluid">
     <div class="span8"></div>
     <div class="span4">
-      <%= facebook_like_buttom(
+      <%= facebook_like_buttom({
         image: request.base_url + album.pictures.first.file.url(:medium),
-        title: album.title
+        title: album.title,
+      },
+      {
+        href: request.base_url + url
+      }
       )%>
     </div>
   </div>
