@@ -10,6 +10,7 @@ gem "high_voltage"
 gem "twitter-bootstrap-rails"
 gem "mail_form"
 gem "simple_form"
+gem 'redcarpet'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
