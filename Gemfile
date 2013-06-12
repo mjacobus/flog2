@@ -17,6 +17,8 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'shoulda-matchers'
   gem 'rb-inotify', '~> 0.8.8'
+  gem 'spork', '~> 1.0rc'
+  gem 'guard-spork'
 end
 
 group :assets do

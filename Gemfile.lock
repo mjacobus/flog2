@@ -61,6 +61,8 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
     cocaine (0.4.2)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -96,6 +98,10 @@ GEM
       thor (>= 0.14.6)
     guard-rspec (1.2.1)
       guard (>= 1.1)
+    guard-spork (1.5.0)
+      childprocess (>= 0.2.3)
+      guard (>= 1.1)
+      spork (>= 0.8.4)
     has_scope (0.5.1)
     high_voltage (1.2.1)
     highline (1.6.15)
@@ -215,6 +221,7 @@ GEM
       actionpack (~> 3.0)
       activemodel (~> 3.0)
     slop (3.4.3)
+    spork (1.0.0rc3)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -248,6 +255,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   guard-rspec
+  guard-spork
   high_voltage
   jquery-fileupload-rails
   jquery-rails
@@ -261,6 +269,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   shoulda-matchers
   simple_form
+  spork (~> 1.0rc)
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
