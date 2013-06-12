@@ -6,6 +6,10 @@ describe Page do
     it { should validate_presence_of(:title) }
   end
 
+  describe "#menu_order" do
+    it { should allow_mass_assignment_of(:menu_order) }
+  end
+
   describe "#slug" do
     it { should allow_mass_assignment_of(:slug) }
     it { should validate_presence_of(:slug) }
