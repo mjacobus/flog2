@@ -31,10 +31,10 @@
               <% categories.each do |category| %>
                 <li><%= link_to category.name, category_path(category) %></li>
               <% end %>
+              <li class="nav-header"><%= t('flog.about') %></li>
               <% menu_pages.each do |page| %>
                 <li><%= link_to(page.title, "/#{page.slug}.html") %></li>
               <% end %>
-              <li class="nav-header"><%= t('flog.about') %></li>
               <li><a target="_blank" href="http://www.facebook.com/PamelaJacobusFotografia" class="sprite facebook_page">Minha Página no Facebook</a></li>
               <li><a href="/contato">Contato</a></li> 
             </ul>
