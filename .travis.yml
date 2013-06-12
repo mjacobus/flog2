@@ -12,5 +12,5 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
 before_script:
-  - mysql -e 'create database FromHouseToHouse_test'
-  - psql -c 'create database FromHouseToHouse_test' -U postgres
+  - mysql -e 'create database flog_test'
+  - psql -c 'create database flog_test' -U postgres
