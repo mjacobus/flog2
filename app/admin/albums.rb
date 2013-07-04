@@ -25,6 +25,12 @@ ActiveAdmin.register Album do
       row :body do
         simple_format album.body
       end
+      row :url do |album|
+        params = {}
+        params[:token] = album.token
+        url = album_url(album.category.slug, album.slug, params)
+        link_to(url, url)
+      end
       row :pictures do
         render 'pictures'
       end

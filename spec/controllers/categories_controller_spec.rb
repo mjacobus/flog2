@@ -8,7 +8,7 @@ describe CategoriesController do
     it "returns http success" do
       params = { category: 'category' }
       Category.should_receive(:find_by_slug).with('category').and_return(category)
-      category.stub_chain(:albums, :published, :page, :per).and_return(albums)
+      category.stub_chain(:albums, :published, :public, :page, :per).and_return(albums)
 
       get :index, params
       response.should be_success

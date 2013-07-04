@@ -3,8 +3,9 @@
 FactoryGirl.define do
   factory :album do
     title { generate(:title) }
-    slug "MyString"
+    slug { generate(:slug) } 
     body "MyText"
     category
+    secret false
   end
 end
