@@ -22,7 +22,7 @@
     <div class="row-fluid">
       <div class="span12">
         <% if @album.secret? %>
-          <h2><%= picture.id %>(<%= picture.file_file_name %>)</h2>
+          <h2><%= picture.file_file_name %></h2>
         <% end %>
         <%= picture(picture) %>
       </div>
