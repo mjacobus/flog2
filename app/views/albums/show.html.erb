@@ -21,9 +21,7 @@
   <% @album.pictures.each do |picture| %>
     <div class="row-fluid">
       <div class="span12">
-        <% if @album.secret? %>
-          <h2><%= picture.file_file_name %></h2>
-        <% end %>
+        <div class="file-name"><%= picture.file_file_name %></div>
         <%= picture(picture) %>
       </div>
     </div>
