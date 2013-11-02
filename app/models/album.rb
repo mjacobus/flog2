@@ -7,12 +7,12 @@ class Album < ActiveRecord::Base
                   :token
 
   belongs_to :category
-  has_many :pictures, as: :picturable, order: :sequence
+  has_many :pictures, as: :picturable, order: :sequence, dependent: :destroy
 
   validates :slug, presence: true, uniqueness: { case_sensitive: false }
   validates :title, presence: true
   validates :category, presence: true
-  validates :token, presence: { if: :secret?  } 
+  validates :token, presence: { if: :secret?  }
 
   scope :public, ->{ where(secret: false)  }
   scope :published, ->{ order('created_at DESC') }
@@ -22,7 +22,7 @@ class Album < ActiveRecord::Base
 
 
   def self.filter(params = {})
-    q = self 
+    q = self
 
     params.each do |key, value|
       if key.present? && q.respond_to?("with_#{key}")

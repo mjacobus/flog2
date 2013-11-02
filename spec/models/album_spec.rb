@@ -31,8 +31,24 @@ describe Album, '#title' do
   it { should validate_presence_of(:title) }
 end
 
-describe Album, '#pictures' do
+describe Album, '#pictures', :focus do
+  let(:album){ create(:album) }
+  let(:picture) { album.pictures.build }
+
   it { should have_many(:pictures) }
+
+  before do
+    picture.save(validate: false)
+  end
+
+  it "destroy pictures when the album is destroyed" do
+    expect { album.destroy }.to change(Picture, :count).by(-1)
+  end
+
+  it "wont destroy the pictures when the album is just updated" do
+    album.title = 'another title'
+    expect { album.save! }.not_to change(Picture, :count)
+  end
 end
 
 describe Album, '#secret' do

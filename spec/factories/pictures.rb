@@ -3,9 +3,8 @@
 FactoryGirl.define do
   factory :picture do
     title "MyString"
-    descripton "MyText"
-    picturable_type "MyString"
-    picturable_id 1
-    file ""
+    description "MyText"
+    picturable_type "Album"
+    picturable_id { create(:album).id }
   end
 end
