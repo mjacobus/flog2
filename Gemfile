@@ -20,6 +20,8 @@ group :test, :development do
   gem 'rb-inotify', '~> 0.8.8'
   gem 'spork', '~> 1.0rc'
   gem 'guard-spork'
+  gem 'simplecov'
+  gem 'coveralls'
 end
 
 group :assets do
