@@ -31,7 +31,7 @@ describe Album, '#title' do
   it { should validate_presence_of(:title) }
 end
 
-describe Album, '#pictures', :focus do
+describe Album, '#pictures' do
   let(:album){ create(:album) }
   let(:picture) { album.pictures.build }
 
