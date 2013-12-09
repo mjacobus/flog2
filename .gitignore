@@ -16,3 +16,4 @@
 public/system
 config/deploy.rb
 config/smtp.yml
+coverage
